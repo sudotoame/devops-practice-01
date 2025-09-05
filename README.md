@@ -1,5 +1,8 @@
 # DevOps Practice
 
-## Test
+## Dependencies
 
-project: [automation qa](https://github.com/Zblol/automation_qa_course)
+- Docker
+- GitLab Runner
+
+> project: [automation qa](https://github.com/Zblol/automation_qa_course)
