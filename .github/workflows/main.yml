@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: build
-        run: bash docker-build-pytest.sh
+        run: bash scripts/docker-build-pytest.sh
           
       - name: run
-        run: bash docker-run-pytest.sh
+        run: bash scripts/docker-run-pytest.sh
