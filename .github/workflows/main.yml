@@ -10,6 +10,8 @@ jobs:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v3
-      - name: test starting
-        run: 
-          bash docker-build-pytest.sh && bash docker-run-pytest.sh
+      - name: build
+        run: bash docker-build-pytest.sh
+          
+      - name: run
+        run: bash docker-run-pytest.sh
