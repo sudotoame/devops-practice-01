@@ -10,10 +10,10 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: remove image
-        run: docker rmi pytest:1.0
+        run: docker rmi pytest:1.0 || true
 
       - name: remove container
-        run: docker rm -f pytest
+        run: docker rm -f pytest || true
   
   build:
     name: build docker image
