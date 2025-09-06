@@ -1,0 +1,15 @@
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+
+jobs:
+  test:
+    name: test-py
+    runs-on: self-hosted
+    steps:
+      - name: test starting
+        run: |
+          bash scripts/docker-build-pytest.sh
+          bash scripts/docker-run-pytest.sh
