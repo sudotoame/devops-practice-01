@@ -2,4 +2,4 @@
 
 set -e
 
-docker build -t pytest:1.0 ..
+docker build -t pytest:1.0 .
