@@ -11,6 +11,9 @@ jobs:
     steps:
       - name: remove image
         run: docker rmi pytest:${{ github.run_number }} || true
+
+      - name: remove container
+        run: docker rm -f pytest || true
   
   build:
     name: build docker image
