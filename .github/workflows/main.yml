@@ -9,6 +9,8 @@ jobs:
     name: test-py
     runs-on: self-hosted
     steps:
+      - uses: actions/checkout@v3
       - name: test starting
         run: 
-          pwd
+          bash scripts/docker-build-pytest.sh
+          bash scripts/docker-run-pytest.sh
