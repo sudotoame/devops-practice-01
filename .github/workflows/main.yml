@@ -5,7 +5,7 @@ on:
     - main
 
 jobs:
-  remove:
+  cleanup-pre:
     name: remove image before pipepline
     runs-on: self-hosted
     steps:
@@ -14,7 +14,7 @@ jobs:
   
   build:
     name: build docker image
-    needs: remove
+    needs: cleanup-pre
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v3
@@ -29,7 +29,7 @@ jobs:
       - name: start test
         run: bash scripts/docker-run-pytest.sh
   
-  cleanup:
+  cleanup-post:
     name: cleanup after pipepline
     needs: [build, test]
     runs-on: self-hosted
@@ -37,3 +37,6 @@ jobs:
     steps:
       - name: remove image
         run: docker rmi pytest:${{ github.run_number }}
+
+      - name: remove container
+        run: docker rm -f pytest || true
