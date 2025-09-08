@@ -45,6 +45,7 @@ jobs:
 
   cleanup-post:
     name: remove images
+    needs: report
     runs-on: self-hosted
     steps:
       - name: remove image

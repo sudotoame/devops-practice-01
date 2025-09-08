@@ -8,7 +8,7 @@ desiredCapabilities={
 "browserName" : "chrome"
 }
 
-@pytest.fixture(scope='function')
+@pytest.fixture(scope='session')
 def driver():
     options = webdriver.ChromeOptions()
     options.add_argument("--headless")
