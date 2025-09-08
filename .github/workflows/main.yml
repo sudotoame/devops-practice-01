@@ -34,6 +34,11 @@ jobs:
         run: bash scripts/docker-run-pytest.sh
         continue-on-error: true 
         
-      - name: show logs pytest
-        if: always()
-        run: docker logs pytest || true
+  report:
+    name: report create
+    needs: test
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+      - name: start create report
+        run: echo "report has been create"
