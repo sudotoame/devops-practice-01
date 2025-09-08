@@ -13,5 +13,5 @@ docker run \
        	--name pytest \
        	--rm \
        	--network selenium-network \
-       	pytest:${IMAGE_TAG} \
 	-v /data/allure-results:/app/allure-results
+       	pytest:${IMAGE_TAG} \
