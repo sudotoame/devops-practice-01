@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY . /app
 
-RUN pip3 install -r requirements.txt
+RUN pip3 install -r requirements.txt && mkdir -p /app/allure-results
 
-CMD ["pytest", --allure-dir=/app/allure-results, "tests/"]
+CMD python3 -m pytest  --allure-dir=/app/allure-results tests/
